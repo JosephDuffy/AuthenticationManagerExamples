@@ -13,6 +13,8 @@
 		D91876821981A92A005205D1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D91876801981A92A005205D1 /* Main.storyboard */; };
 		D91876841981A92A005205D1 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D91876831981A92A005205D1 /* Images.xcassets */; };
 		D91876901981A92B005205D1 /* LocalAuthenticationExamplesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D918768F1981A92B005205D1 /* LocalAuthenticationExamplesTests.swift */; };
+		D96F32141982EF5100372846 /* AuthenticationManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D96F32121982EF3700372846 /* AuthenticationManager.framework */; };
+		D96F32151982EF5100372846 /* AuthenticationManager.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D96F32121982EF3700372846 /* AuthenticationManager.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -25,6 +27,20 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		D96F32161982EF5100372846 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				D96F32151982EF5100372846 /* AuthenticationManager.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		D91876751981A92A005205D1 /* LocalAuthenticationExamples.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LocalAuthenticationExamples.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D91876791981A92A005205D1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -36,6 +52,7 @@
 		D91876891981A92A005205D1 /* LocalAuthenticationExamplesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LocalAuthenticationExamplesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D918768E1981A92A005205D1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D918768F1981A92B005205D1 /* LocalAuthenticationExamplesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalAuthenticationExamplesTests.swift; sourceTree = "<group>"; };
+		D96F32121982EF3700372846 /* AuthenticationManager.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AuthenticationManager.framework; path = "../../../../../../Library/Developer/Xcode/DerivedData/AuthenticationManager-ghzjuldvdaddmgbtipycqsomlbgg/Build/Products/Debug-iphoneos/AuthenticationManager.framework"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +60,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D96F32141982EF5100372846 /* AuthenticationManager.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -90,6 +108,7 @@
 		D91876781981A92A005205D1 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				D95CC5041981ADB500CF1CE6 /* Frameworks */,
 				D91876791981A92A005205D1 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -112,6 +131,14 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		D95CC5041981ADB500CF1CE6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D96F32121982EF3700372846 /* AuthenticationManager.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -122,6 +149,7 @@
 				D91876711981A92A005205D1 /* Sources */,
 				D91876721981A92A005205D1 /* Frameworks */,
 				D91876731981A92A005205D1 /* Resources */,
+				D96F32161982EF5100372846 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -284,6 +312,10 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = (
+					"-all_load",
+					"-ObjC",
+				);
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -320,6 +352,10 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = (
+					"-all_load",
+					"-ObjC",
+				);
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -331,6 +367,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/AuthenticationManager-bhapdaoojvikajbiwaqjvndycpuu/Build/Products/Debug-iphoneos",
+					"$(PROJECT_DIR)/LocalAuthenticationExamples",
+					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/AuthenticationManager-ghzjuldvdaddmgbtipycqsomlbgg/Build/Products/Debug-iphoneos",
+					/Users/JosephDuffy/Dropbox/Projects/Swift/Authentication,
+					"Manager/AuthenticationManagerFramework/build/Debug-iphoneos",
+				);
 				INFOPLIST_FILE = LocalAuthenticationExamples/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -343,6 +387,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/AuthenticationManager-bhapdaoojvikajbiwaqjvndycpuu/Build/Products/Debug-iphoneos",
+					"$(PROJECT_DIR)/LocalAuthenticationExamples",
+					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/AuthenticationManager-ghzjuldvdaddmgbtipycqsomlbgg/Build/Products/Debug-iphoneos",
+					/Users/JosephDuffy/Dropbox/Projects/Swift/Authentication,
+					"Manager/AuthenticationManagerFramework/build/Debug-iphoneos",
+				);
 				INFOPLIST_FILE = LocalAuthenticationExamples/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -403,6 +455,7 @@
 				D91876951981A92B005205D1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D91876961981A92B005205D1 /* Build configuration list for PBXNativeTarget "LocalAuthenticationExamplesTests" */ = {
 			isa = XCConfigurationList;
@@ -411,6 +464,7 @@
 				D91876981981A92B005205D1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

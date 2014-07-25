@@ -7,19 +7,23 @@
 //
 
 import UIKit
+import AuthenticationManager
 
-class FirstViewController: UIViewController {
-                            
+class FirstViewController: UIViewController, AuthenticationDelegate {
+
+    var manager: AuthenticationManager = AuthenticationManager.sharedInstance
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        let viewController: AuthenticationViewController = self.manager.createAuthenticationViewController(.PINCode)
+        viewController.delegate = self
+        self.addChildViewController(viewController)
+        self.view.addSubview(viewController.view)
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    func authenticationDidSucceed() {
+        println("PIN Code correct")
     }
-
-
 }
 
