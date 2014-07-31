@@ -9,7 +9,7 @@
 import UIKit
 import AuthenticationManager
 
-class PINViewController: UIViewController, PINSetupDelegate {
+class PINViewController: UIViewController, AuthenticationDelegate, PINSetupDelegate, PINAuthenticationDelegate {
 
     var manager: AuthenticationManager = AuthenticationManager.sharedInstance
     @IBOutlet weak var currentCodeLabel: UILabel!
@@ -45,6 +45,7 @@ class PINViewController: UIViewController, PINSetupDelegate {
     @IBAction func setCodeButtonWasPressed(sender: UIButton) {
         let viewController = self.manager.getAuthenticationSetupViewControllerForType(.PIN) as PINSetupViewController
         viewController.delegate = self
+        viewController.setupDelegate = self
         self.presentViewController(viewController.viewInNavigationController(), animated: true, completion: nil)
     }
 
@@ -52,9 +53,13 @@ class PINViewController: UIViewController, PINSetupDelegate {
     }
 
     @IBAction func testCodeButtonWasPressed(sender: UIButton) {
-        let viewController: AuthenticationViewController = self.manager.getAuthenticationViewControllerForType(.PIN)
-//        viewController.delegate = self
-        self.presentViewController(viewController, animated: true, completion: nil)
+        let viewController = self.manager.getAuthenticationViewControllerForType(.PIN) as PINAuthenticationViewController
+        viewController.delegate = self
+        viewController.authenticationDelegate = self
+        let currentPIN = self.manager.userDefaults.stringForKey(kAMPINKey);
+        assert(currentPIN != nil, "Cannot test PIN with no PIN set")
+        viewController.PIN = currentPIN
+        self.presentViewController(viewController.viewInNavigationController(), animated: true, completion: nil)
     }
 
     @IBAction func resetPINButtonWasPressed(sender: UIButton) {
@@ -63,20 +68,40 @@ class PINViewController: UIViewController, PINSetupDelegate {
         self.updateUI()
     }
 
-    func authenticationDidSucceed() {
-        println("PIN correct")
+    /// AuthenticationDelegate methods
+
+    func authenticationWasCanceled(viewController: AuthenticationViewController) {
+        if viewController is PINAuthenticationViewController {
+            self.lastTestResultLabel.text = "Last Result: Canceled"
+        }
     }
 
     /// PINSetupDelegate methods
+
     func setupCompleteWithPIN(PIN: String) {
         // Save the PIN to the user defaults
         self.manager.userDefaults.setValue(PIN, forKey: kAMPINKey)
         self.manager.userDefaults.synchronize()
         // Remove the popup view
         self.dismissViewControllerAnimated(true, completion: nil)
-//        self.presentedViewController.removeFromParentViewController()
+        //        self.presentedViewController.removeFromParentViewController()
         // Update the UI
         self.updateUI()
+    }
+
+    /// PINAuthenticationDelegate methods
+
+    func authenticationDidSucceed() {
+        self.lastTestResultLabel.text = "Last Result: Authenticated"
+        self.presentedViewController.dismissViewControllerAnimated(true, completion: nil)
+    }
+
+    func inputPINWasIncorrect(PIN: String) {
+        self.lastTestResultLabel.text = "Last Result: Input PIN was incorrect"
+    }
+
+    func PINWasInput(PIN: String) {
+        self.lastTestResultLabel.text = "Last Result: PIN was input"
     }
 }
 
