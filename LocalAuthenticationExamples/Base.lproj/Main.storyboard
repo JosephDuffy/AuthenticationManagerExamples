@@ -8,7 +8,7 @@
         <!--PIN Code-->
         <scene sceneID="hNz-n2-bh7">
             <objects>
-                <viewController id="9pv-A4-QxB" customClass="FirstViewController" customModule="LocalAuthenticationExamples" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="9pv-A4-QxB" customClass="PINViewController" customModule="LocalAuthenticationExamples" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Ia1-K6-d13"/>
                         <viewControllerLayoutGuide type="bottom" id="4ug-Mw-9AY"/>
@@ -21,15 +21,83 @@
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                 <items/>
                             </toolbar>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current PIN:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vRF-aU-Y0Z">
+                                <rect key="frame" x="253" y="44" width="95" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BmQ-FA-fja">
+                                <rect key="frame" x="273" y="73" width="53" height="30"/>
+                                <state key="normal" title="Set PIN">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="setCodeButtonWasPressed:" destination="9pv-A4-QxB" eventType="touchUpInside" id="b5F-2B-Y2O"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZZg-GP-fYq">
+                                <rect key="frame" x="260" y="111" width="80" height="30"/>
+                                <state key="normal" title="Update PIN">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="updateCodeButtonWasPressed:" destination="9pv-A4-QxB" eventType="touchUpInside" id="Dev-Eg-GGT"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a7j-5T-kq9">
+                                <rect key="frame" x="271" y="149" width="58" height="30"/>
+                                <state key="normal" title="Test PIN">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="testCodeButtonWasPressed:" destination="9pv-A4-QxB" eventType="touchUpInside" id="4iI-0Q-hz6"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Last test result: N/A" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="19g-Nj-MjE">
+                                <rect key="frame" x="224" y="187" width="152" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ki6-SH-bzV">
+                                <rect key="frame" x="265" y="215" width="69" height="30"/>
+                                <state key="normal" title="Reset PIN">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="resetPINButtonWasPressed:" destination="9pv-A4-QxB" eventType="touchUpInside" id="P1x-Gu-48G"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="a7j-5T-kq9" firstAttribute="top" secondItem="ZZg-GP-fYq" secondAttribute="bottom" constant="8" symbolic="YES" id="0os-OB-mbc"/>
+                            <constraint firstAttribute="centerX" secondItem="ki6-SH-bzV" secondAttribute="centerX" id="18b-nN-Oxb"/>
                             <constraint firstItem="iQr-d4-Ar2" firstAttribute="top" secondItem="tsR-hK-woN" secondAttribute="top" id="8qp-4k-ywN"/>
                             <constraint firstItem="iQr-d4-Ar2" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leading" id="9hT-Pl-9vo"/>
+                            <constraint firstAttribute="centerX" secondItem="BmQ-FA-fja" secondAttribute="centerX" id="BPQ-as-KzU"/>
                             <constraint firstItem="iQr-d4-Ar2" firstAttribute="trailing" secondItem="tsR-hK-woN" secondAttribute="trailing" id="GCv-eZ-Lr1"/>
+                            <constraint firstAttribute="centerX" secondItem="a7j-5T-kq9" secondAttribute="centerX" id="Hov-lv-bo8"/>
+                            <constraint firstItem="ki6-SH-bzV" firstAttribute="top" secondItem="19g-Nj-MjE" secondAttribute="bottom" constant="8" symbolic="YES" id="I6b-aa-HrV"/>
+                            <constraint firstItem="ZZg-GP-fYq" firstAttribute="top" secondItem="BmQ-FA-fja" secondAttribute="bottom" constant="8" symbolic="YES" id="IXc-lh-Rle"/>
+                            <constraint firstItem="BmQ-FA-fja" firstAttribute="top" secondItem="vRF-aU-Y0Z" secondAttribute="bottom" constant="8" symbolic="YES" id="PI9-Yp-rxQ"/>
+                            <constraint firstAttribute="centerX" secondItem="ZZg-GP-fYq" secondAttribute="centerX" id="RLM-2E-MtV"/>
+                            <constraint firstAttribute="centerX" secondItem="19g-Nj-MjE" secondAttribute="centerX" id="cYa-Ln-Cd0"/>
+                            <constraint firstItem="vRF-aU-Y0Z" firstAttribute="top" secondItem="iQr-d4-Ar2" secondAttribute="bottom" constant="8" symbolic="YES" id="mhR-sW-hPW"/>
+                            <constraint firstItem="19g-Nj-MjE" firstAttribute="top" secondItem="a7j-5T-kq9" secondAttribute="bottom" constant="8" symbolic="YES" id="s8w-Ny-M97"/>
+                            <constraint firstAttribute="centerX" secondItem="vRF-aU-Y0Z" secondAttribute="centerX" id="yIf-fu-w3u"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="PIN Code" image="first" id="acW-dT-cKf"/>
+                    <connections>
+                        <outlet property="currentCodeLabel" destination="vRF-aU-Y0Z" id="hGV-bS-Mmk"/>
+                        <outlet property="lastTestResultLabel" destination="19g-Nj-MjE" id="JS7-BF-fWy"/>
+                        <outlet property="resetPINButton" destination="ki6-SH-bzV" id="0Pj-KY-vWl"/>
+                        <outlet property="setCodeButton" destination="BmQ-FA-fja" id="Q68-8I-Ik9"/>
+                        <outlet property="tsetCodeButton" destination="a7j-5T-kq9" id="Q5n-1z-rhL"/>
+                        <outlet property="updateCodeButton" destination="ZZg-GP-fYq" id="lz6-wy-nGI"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
