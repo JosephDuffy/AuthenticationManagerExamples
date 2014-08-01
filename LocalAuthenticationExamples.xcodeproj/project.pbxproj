@@ -13,8 +13,7 @@
 		D91876821981A92A005205D1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D91876801981A92A005205D1 /* Main.storyboard */; };
 		D91876841981A92A005205D1 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D91876831981A92A005205D1 /* Images.xcassets */; };
 		D91876901981A92B005205D1 /* LocalAuthenticationExamplesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D918768F1981A92B005205D1 /* LocalAuthenticationExamplesTests.swift */; };
-		D96F32141982EF5100372846 /* AuthenticationManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D96F32121982EF3700372846 /* AuthenticationManager.framework */; };
-		D96F32151982EF5100372846 /* AuthenticationManager.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D96F32121982EF3700372846 /* AuthenticationManager.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		D946351D198C2AF9002AEE7B /* AuthenticationManager.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D96F32121982EF3700372846 /* AuthenticationManager.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,7 +33,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				D96F32151982EF5100372846 /* AuthenticationManager.framework in Embed Frameworks */,
+				D946351D198C2AF9002AEE7B /* AuthenticationManager.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -60,7 +59,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D96F32141982EF5100372846 /* AuthenticationManager.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -369,11 +367,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/AuthenticationManager-bhapdaoojvikajbiwaqjvndycpuu/Build/Products/Debug-iphoneos",
 					"$(PROJECT_DIR)/LocalAuthenticationExamples",
-					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/AuthenticationManager-ghzjuldvdaddmgbtipycqsomlbgg/Build/Products/Debug-iphoneos",
-					/Users/JosephDuffy/Dropbox/Projects/Swift/Authentication,
-					"Manager/AuthenticationManagerFramework/build/Debug-iphoneos",
 				);
 				INFOPLIST_FILE = LocalAuthenticationExamples/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
@@ -389,11 +383,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/AuthenticationManager-bhapdaoojvikajbiwaqjvndycpuu/Build/Products/Debug-iphoneos",
 					"$(PROJECT_DIR)/LocalAuthenticationExamples",
-					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/AuthenticationManager-ghzjuldvdaddmgbtipycqsomlbgg/Build/Products/Debug-iphoneos",
-					/Users/JosephDuffy/Dropbox/Projects/Swift/Authentication,
-					"Manager/AuthenticationManagerFramework/build/Debug-iphoneos",
 				);
 				INFOPLIST_FILE = LocalAuthenticationExamples/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
