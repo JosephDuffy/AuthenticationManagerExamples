@@ -9,13 +9,13 @@
 import UIKit
 import AuthenticationManager
 
-class PINViewController: UIViewController, AuthenticationDelegate, PINSetupDelegate, PINAuthenticationDelegate {
+class PINViewController: UIViewController, AuthenticationDelegate, PINSetupDelegate, PINUpdateDelegate, PINAuthenticationDelegate {
 
     var manager: AuthenticationManager = AuthenticationManager.sharedInstance
     @IBOutlet weak var currentCodeLabel: UILabel!
     @IBOutlet weak var setCodeButton: UIButton!
     @IBOutlet weak var updateCodeButton: UIButton!
-    @IBOutlet weak var tsetCodeButton: UIButton!
+    @IBOutlet weak var testCodeButton: UIButton!
     @IBOutlet weak var lastTestResultLabel: UILabel!
     @IBOutlet weak var resetPINButton: UIButton!
 
@@ -30,17 +30,19 @@ class PINViewController: UIViewController, AuthenticationDelegate, PINSetupDeleg
             self.currentCodeLabel.text = "Current PIN: \(currentCode)"
             self.setCodeButton.enabled = false
             self.updateCodeButton.enabled = true
-            self.tsetCodeButton.enabled = true
+            self.testCodeButton.enabled = true
             self.resetPINButton.enabled = true
         } else {
             // No PIN code has been set yet
             self.currentCodeLabel.text = "Current PIN: Not Set"
             self.setCodeButton.enabled = true
             self.updateCodeButton.enabled = false
-            self.tsetCodeButton.enabled = false
+            self.testCodeButton.enabled = false
             self.resetPINButton.enabled = false
         }
     }
+
+    /// Button pressed methods
 
     @IBAction func setCodeButtonWasPressed(sender: UIButton) {
         let viewController = self.manager.getAuthenticationSetupViewControllerForType(.PIN) as PINSetupViewController
@@ -50,6 +52,10 @@ class PINViewController: UIViewController, AuthenticationDelegate, PINSetupDeleg
     }
 
     @IBAction func updateCodeButtonWasPressed(sender: UIButton) {
+        let viewController = self.manager.getAuthenticationUpdateViewControllerForType(.PIN) as PINUpdateViewController
+        viewController.delegate = self
+        viewController.updateDelegate = self
+        self.presentViewController(viewController.viewInNavigationController(), animated: true, completion: nil)
     }
 
     @IBAction func testCodeButtonWasPressed(sender: UIButton) {
@@ -84,7 +90,14 @@ class PINViewController: UIViewController, AuthenticationDelegate, PINSetupDeleg
         self.manager.userDefaults.synchronize()
         // Remove the popup view
         self.dismissViewControllerAnimated(true, completion: nil)
-        //        self.presentedViewController.removeFromParentViewController()
+        // Update the UI
+        self.updateUI()
+    }
+
+    /// PINModifyDelegate methods
+
+    func PINWasUpdated(newPIN: String) {
+        self.dismissViewControllerAnimated(true, completion: nil)
         // Update the UI
         self.updateUI()
     }

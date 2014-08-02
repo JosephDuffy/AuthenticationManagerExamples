@@ -5,7 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6190.4"/>
     </dependencies>
     <scenes>
-        <!--PIN Code-->
+        <!--PIN-->
         <scene sceneID="hNz-n2-bh7">
             <objects>
                 <viewController id="9pv-A4-QxB" customClass="PINViewController" customModule="LocalAuthenticationExamples" customModuleProvider="target" sceneMemberID="viewController">
@@ -89,13 +89,13 @@
                             <constraint firstAttribute="centerX" secondItem="vRF-aU-Y0Z" secondAttribute="centerX" id="yIf-fu-w3u"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="PIN Code" image="first" id="acW-dT-cKf"/>
+                    <tabBarItem key="tabBarItem" title="PIN" image="first" id="acW-dT-cKf"/>
                     <connections>
                         <outlet property="currentCodeLabel" destination="vRF-aU-Y0Z" id="hGV-bS-Mmk"/>
                         <outlet property="lastTestResultLabel" destination="19g-Nj-MjE" id="JS7-BF-fWy"/>
                         <outlet property="resetPINButton" destination="ki6-SH-bzV" id="0Pj-KY-vWl"/>
                         <outlet property="setCodeButton" destination="BmQ-FA-fja" id="Q68-8I-Ik9"/>
-                        <outlet property="tsetCodeButton" destination="a7j-5T-kq9" id="Q5n-1z-rhL"/>
+                        <outlet property="testCodeButton" destination="a7j-5T-kq9" id="JqT-Q1-wFD"/>
                         <outlet property="updateCodeButton" destination="ZZg-GP-fYq" id="lz6-wy-nGI"/>
                     </connections>
                 </viewController>
