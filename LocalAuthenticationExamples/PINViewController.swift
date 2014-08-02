@@ -11,7 +11,7 @@ import AuthenticationManager
 
 class PINViewController: UIViewController, AuthenticationDelegate, PINSetupDelegate, PINUpdateDelegate, PINAuthenticationDelegate {
 
-    var manager: AuthenticationManager = AuthenticationManager.sharedInstance
+    let manager: AuthenticationManager = AuthenticationManager.sharedInstance
     @IBOutlet weak var currentCodeLabel: UILabel!
     @IBOutlet weak var setCodeButton: UIButton!
     @IBOutlet weak var updateCodeButton: UIButton!
