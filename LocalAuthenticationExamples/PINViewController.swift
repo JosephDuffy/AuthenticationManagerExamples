@@ -62,9 +62,6 @@ class PINViewController: UIViewController, AuthenticationDelegate, PINSetupDeleg
         let viewController = self.manager.getAuthenticationViewControllerForType(.PIN) as PINAuthenticationViewController
         viewController.delegate = self
         viewController.authenticationDelegate = self
-        let currentPIN = self.manager.userDefaults.stringForKey(kAMPINKey);
-        assert(currentPIN != nil, "Cannot test PIN with no PIN set")
-        viewController.PIN = currentPIN
         self.presentViewController(viewController.viewInNavigationController(), animated: true, completion: nil)
     }
 
@@ -85,9 +82,6 @@ class PINViewController: UIViewController, AuthenticationDelegate, PINSetupDeleg
     /// PINSetupDelegate methods
 
     func setupCompleteWithPIN(PIN: String) {
-        // Save the PIN to the user defaults
-        self.manager.userDefaults.setValue(PIN, forKey: kAMPINKey)
-        self.manager.userDefaults.synchronize()
         // Remove the popup view
         self.dismissViewControllerAnimated(true, completion: nil)
         // Update the UI
