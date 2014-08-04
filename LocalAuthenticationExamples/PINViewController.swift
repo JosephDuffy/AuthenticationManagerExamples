@@ -26,7 +26,7 @@ class PINViewController: UIViewController, AuthenticationDelegate, PINSetupDeleg
     }
 
     func updateUI() {
-        if let currentCode = self.manager.userDefaults.stringForKey(kAMPINKey) {
+        if let currentCode = AuthenticationManager.storedPIN {
             self.currentCodeLabel.text = "Current PIN: \(currentCode)"
             self.setCodeButton.enabled = false
             self.updateCodeButton.enabled = true
@@ -66,8 +66,7 @@ class PINViewController: UIViewController, AuthenticationDelegate, PINSetupDeleg
     }
 
     @IBAction func resetPINButtonWasPressed(sender: UIButton) {
-        self.manager.userDefaults.removeObjectForKey(kAMPINKey)
-        self.manager.userDefaults.synchronize()
+        AuthenticationManager.resetStoredPIN()
         self.updateUI()
     }
 
