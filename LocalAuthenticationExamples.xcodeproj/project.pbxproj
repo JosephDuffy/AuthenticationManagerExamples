@@ -13,7 +13,6 @@
 		D91876821981A92A005205D1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D91876801981A92A005205D1 /* Main.storyboard */; };
 		D91876841981A92A005205D1 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D91876831981A92A005205D1 /* Images.xcassets */; };
 		D91876901981A92B005205D1 /* LocalAuthenticationExamplesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D918768F1981A92B005205D1 /* LocalAuthenticationExamplesTests.swift */; };
-		D946351D198C2AF9002AEE7B /* AuthenticationManager.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D96F32121982EF3700372846 /* AuthenticationManager.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,7 +32,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				D946351D198C2AF9002AEE7B /* AuthenticationManager.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -51,7 +49,6 @@
 		D91876891981A92A005205D1 /* LocalAuthenticationExamplesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LocalAuthenticationExamplesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D918768E1981A92A005205D1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D918768F1981A92B005205D1 /* LocalAuthenticationExamplesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalAuthenticationExamplesTests.swift; sourceTree = "<group>"; };
-		D96F32121982EF3700372846 /* AuthenticationManager.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AuthenticationManager.framework; path = "../../../../../../Library/Developer/Xcode/DerivedData/AuthenticationManager-ghzjuldvdaddmgbtipycqsomlbgg/Build/Products/Debug-iphoneos/AuthenticationManager.framework"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,7 +129,6 @@
 		D95CC5041981ADB500CF1CE6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				D96F32121982EF3700372846 /* AuthenticationManager.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
