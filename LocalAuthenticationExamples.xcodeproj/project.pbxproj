@@ -13,6 +13,7 @@
 		D91876821981A92A005205D1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D91876801981A92A005205D1 /* Main.storyboard */; };
 		D91876841981A92A005205D1 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D91876831981A92A005205D1 /* Images.xcassets */; };
 		D91876901981A92B005205D1 /* LocalAuthenticationExamplesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D918768F1981A92B005205D1 /* LocalAuthenticationExamplesTests.swift */; };
+		D9C7FA5E199A823600C1ADE0 /* AuthenticationManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9C7FA5B199A822A00C1ADE0 /* AuthenticationManager.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -22,6 +23,20 @@
 			proxyType = 1;
 			remoteGlobalIDString = D91876741981A92A005205D1;
 			remoteInfo = LocalAuthenticationExamples;
+		};
+		D9C7FA5A199A822A00C1ADE0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D9C7FA55199A822A00C1ADE0 /* AuthenticationManager.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D918763819803A81005205D1;
+			remoteInfo = AuthenticationManager;
+		};
+		D9C7FA5C199A822A00C1ADE0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D9C7FA55199A822A00C1ADE0 /* AuthenticationManager.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D918764319803A81005205D1;
+			remoteInfo = AuthenticationManagerTests;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -49,6 +64,7 @@
 		D91876891981A92A005205D1 /* LocalAuthenticationExamplesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LocalAuthenticationExamplesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D918768E1981A92A005205D1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D918768F1981A92B005205D1 /* LocalAuthenticationExamplesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalAuthenticationExamplesTests.swift; sourceTree = "<group>"; };
+		D9C7FA55199A822A00C1ADE0 /* AuthenticationManager.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = AuthenticationManager.xcodeproj; path = AuthenticationManagerFramework/AuthenticationManager.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +72,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D9C7FA5E199A823600C1ADE0 /* AuthenticationManager.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -75,6 +92,7 @@
 				D91876771981A92A005205D1 /* LocalAuthenticationExamples */,
 				D918768C1981A92A005205D1 /* LocalAuthenticationExamplesTests */,
 				D91876761981A92A005205D1 /* Products */,
+				D9C7FA55199A822A00C1ADE0 /* AuthenticationManager.xcodeproj */,
 			);
 			sourceTree = "<group>";
 		};
@@ -131,6 +149,15 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D9C7FA56199A822A00C1ADE0 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D9C7FA5B199A822A00C1ADE0 /* AuthenticationManager.framework */,
+				D9C7FA5D199A822A00C1ADE0 /* AuthenticationManagerTests.xctest */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -201,6 +228,12 @@
 			mainGroup = D918766C1981A92A005205D1;
 			productRefGroup = D91876761981A92A005205D1 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = D9C7FA56199A822A00C1ADE0 /* Products */;
+					ProjectRef = D9C7FA55199A822A00C1ADE0 /* AuthenticationManager.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				D91876741981A92A005205D1 /* LocalAuthenticationExamples */,
@@ -208,6 +241,23 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		D9C7FA5B199A822A00C1ADE0 /* AuthenticationManager.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = AuthenticationManager.framework;
+			remoteRef = D9C7FA5A199A822A00C1ADE0 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		D9C7FA5D199A822A00C1ADE0 /* AuthenticationManagerTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = AuthenticationManagerTests.xctest;
+			remoteRef = D9C7FA5C199A822A00C1ADE0 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		D91876731981A92A005205D1 /* Resources */ = {
