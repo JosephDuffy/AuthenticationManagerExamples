@@ -1,0 +1,3 @@
+[submodule "AuthenticationManagerFramework"]
+	path = AuthenticationManagerFramework
+	url = https://github.com/YetiiNet/AuthenticationManager.git
